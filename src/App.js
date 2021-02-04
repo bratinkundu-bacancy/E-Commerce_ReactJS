@@ -5,6 +5,7 @@ import './App.css';
 import Navbar from './Components/Navbar/navbar';
 import Products from './Components/Products/products';
 import {getAllProducts, addProductToCart, getCartItems} from './Services/api';
+import Cart from './Components/Cart/Cart';
 
 
  function App() {
@@ -37,6 +38,10 @@ import {getAllProducts, addProductToCart, getCartItems} from './Services/api';
     });
   }
 
+  const removeCartItems = () =>{
+    console.log("Cart is empty!")
+  }
+
   return (
     <Router>
       <div style={{ display: 'flex' }}>
@@ -45,6 +50,9 @@ import {getAllProducts, addProductToCart, getCartItems} from './Services/api';
         <Switch>
           <Route exact path="/">
             <Products products={products} addToCart={addToCart}/>
+          </Route>
+          <Route exact path="/cart">
+            <Cart cart={cart} removeCartItems={removeCartItems} />
           </Route>
         </Switch>
       </div>

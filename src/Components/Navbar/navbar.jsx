@@ -15,7 +15,7 @@ const Navbar = ({totalItems}) => {
           <div className={classes.grow} />
           { (
           <div className={classes.button}>
-            <IconButton  to="/cart" aria-label="Show cart items" color="inherit">
+            <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
               <Badge badgeContent={totalItems == 0 ? "0": totalItems} color="secondary">
                 <ShoppingCart />
               </Badge>
