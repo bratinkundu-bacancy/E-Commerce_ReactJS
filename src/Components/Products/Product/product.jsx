@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Product = ({ product }) => {
+const Product = ({ product, addToCart }) => {
   const classes = useStyles();
 
   return (
@@ -41,7 +41,7 @@ const Product = ({ product }) => {
         <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary" component="p" />
       </CardContent>
       <CardActions disableSpacing className={classes.action}>
-          <IconButton aria-label="Add to Cart">
+          <IconButton aria-label="Add to Cart" onClick={() =>{addToCart(product)}}>
               <AddShoppingCart />
           </IconButton>
       </CardActions>
