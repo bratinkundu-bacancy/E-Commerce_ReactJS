@@ -39,6 +39,7 @@ const CartItem = ({cart, removeCartItem, updateCartItems}) => {
           <Button
             type="button"
             size="small"
+            disabled={cart.quantity === 1}
             onClick={() => updateCartItems(cart.id, cart, cart.quantity - 1)}
           >
             -
@@ -56,7 +57,7 @@ const CartItem = ({cart, removeCartItem, updateCartItems}) => {
           variant="contained"
           type="button"
           color="secondary"
-          onClick={() => removeCartItem(cart.id)}
+          onClick={() => removeCartItem(cart)}
         >
           Remove
         </Button>

@@ -39,7 +39,7 @@ import Cart from './Components/Cart/Cart';
 
 
   const addToCart = (product) => {
-     product.quantity = product.quantity ? product.quantity + 1 : 1 ;
+     product.quantity = 1 ;
     addProductToCart(product)
     .then((res)=>{
       setCart(res.data)
@@ -62,8 +62,9 @@ import Cart from './Components/Cart/Cart';
       })
   }
 
-  const removeCartItem = (productId) => {
-    removeCartIem(productId).then((res) => {
+  const removeCartItem = (product) => {
+    product.quantity = 0;
+    removeCartIem(product.id).then((res) => {
       fetchCart();
     })
   }
