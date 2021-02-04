@@ -1,9 +1,10 @@
 import { Container, Typography, Button, Grid } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem/CartItem";
 
-const Cart = ({cart,removeCartItems}) => {
+const Cart = ({cart,removeCartItems,subtotal,removeCartItem,updateCartItems}) => {  
 
   const useStyles = makeStyles((theme) => ({
     toolbar: theme.mixins.toolbar,
@@ -49,14 +50,14 @@ const Cart = ({cart,removeCartItems}) => {
       <Grid container spacing={3}>
         {cart.map((item) => (
           <Grid item xs={12} sm={4} key={item.id}>
-              <CartItem cart={item} />
+              <CartItem cart={item} removeCartItem={removeCartItem} updateCartItems={updateCartItems}/>
           </Grid>
         ))}
       </Grid>
       <div className={classes.cardDetails}>
-        <Typography variant="h4">Subtotal: 0</Typography>
+        <Typography variant="h4">Subtotal: ${subtotal}</Typography>
         <div>
-          <Button
+          {/* <Button
             className={classes.emptyButton}
             size="large"
             type="button"
@@ -65,7 +66,7 @@ const Cart = ({cart,removeCartItems}) => {
             onClick={removeCartItems}
           >
             Empty cart
-          </Button>
+          </Button> */}
           <Button
             className={classes.checkoutButton}
             component={Link}

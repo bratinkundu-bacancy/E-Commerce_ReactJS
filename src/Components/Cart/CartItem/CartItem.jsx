@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CartItem = ({cart}) => {
+const CartItem = ({cart, removeCartItem, updateCartItems}) => {
   const classes = useStyles();
   return (
     <Card className="cart-item">
@@ -39,15 +39,15 @@ const CartItem = ({cart}) => {
           <Button
             type="button"
             size="small"
-           // onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}
+            onClick={() => updateCartItems(cart.id, cart, cart.quantity - 1)}
           >
             -
           </Button>
-          <Typography>&nbsp;{0}&nbsp;</Typography>
+          <Typography>&nbsp;{cart.quantity}&nbsp;</Typography>
           <Button
             type="button"
             size="small"
-            //onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}
+            onClick={() => updateCartItems(cart.id, cart, cart.quantity + 1)}
           >
             +
           </Button>
@@ -56,7 +56,7 @@ const CartItem = ({cart}) => {
           variant="contained"
           type="button"
           color="secondary"
-          //onClick={() => handleRemoveFromCart(item.id)}
+          onClick={() => removeCartItem(cart.id)}
         >
           Remove
         </Button>

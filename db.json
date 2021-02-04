@@ -22,13 +22,5 @@
       "image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ces/gaming-laptops/geforce-rtx-30-series-laptops-shop-630-d@2x.png"
     }
   ],
-  "cart": [
-    {
-      "id": 1,
-      "name": "Product 1",
-      "price": "5000",
-      "description": "A sample first product",
-      "image": "https://image.cnbcfm.com/api/v1/image/106725307-1601554921056-surface-laptop-go.png?v=1601554930&w=1600&h=900"
-    }
-  ]
+  "cart": []
 }
